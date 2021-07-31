@@ -1,0 +1,379 @@
+@charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+:root {
+    --done-color: rgba(39, 102, 238, 0.85);
+    --done-color-h: rgba(39, 102, 238, 1.0);
+    --del-color: rgba(238, 39, 39, 0.85);
+    --del-color-h: rgba(238, 39, 39, 1.0);
+    --back-color-h: rgba(41, 209, 125, 1.0);
+}
+* {
+  font-family: 'Spoqa Han Sans', 'Sans-serif'; 
+}
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+#header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    width: 100%;
+    min-height: 80px;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: center;
+}
+#header, #footer {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0e3a70+0,43094f+100 */
+    background: #0e3a70; /* Old browsers */
+    background: -moz-linear-gradient(left,  #0e3a70 0%, #43094f 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #0e3a70 0%,#43094f 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #0e3a70 0%,#43094f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e3a70', endColorstr='#43094f',GradientType=1 ); /* IE6-9 */
+}
+#header .title {
+    width: 100%;
+    font-size: 30.4px;
+    font-size: 1.9rem;
+    font-weight: bold; 
+}
+#header .clock {
+    width: 100%;
+    font-size: 20.8px;
+    font-size: 1.3rem;
+    font-weight: lighter;
+}
+
+#box-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    min-height: 85vh;
+    margin: 0 auto;
+}
+.box {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+}
+.box > div {
+    width: 100%;
+    text-align: center;
+}
+.box .sec-tit {
+    height: 10%;
+    margin: 40px 0 15px;
+    box-sizing: border-box;
+    font-size: 19.2px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration-line: underline;
+}
+.box .done-list {
+    height: 25%;
+}
+.box .enter-task {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+}
+.box .inputTask {
+    width: 75%;
+    height: 30px;
+    padding: 0 5px;
+    border: none;
+    border-bottom: 2px solid black;
+    box-sizing: border-box;
+    font-size: 14.4px;
+    font-size: 0.9rem;
+}
+.box .input-null {
+    border: 2px solid red;
+}
+.box button {
+    width: 20%;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 14.4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+.box .addTask {
+    background: var(--done-color);
+}
+.box .addTask:hover {
+    background: var(--done-color-h);
+}
+.box .a-delete {
+    width: 40%;
+    margin: 10px 30%;
+    background: var(--del-color);
+}
+.box .a-delete:hover {
+    background: var(--del-color-h);
+}
+.box .task-list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+.box .task-list .task {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1.5px solid black;
+}
+.box .task-list .task > button {
+    border-radius: 50%;
+    background-color: #fff;
+    transition: opacity 0.3s;
+    opacity: 0.8;
+}
+.box .task-list .task > button:hover {
+    opacity: 1.0;
+}
+.box .task-list .task .done-item, 
+.box .task-list .task .del-item {
+    width: 10%;
+    height: 80%;
+    margin: 0 5px;
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.box .task-list .task .done-item {
+    color: var(--done-color-h);
+}
+.box .task-list .task .back {
+    color: var(--back-color-h);
+}
+.box .task-list .task .del-item {
+    color: var(--del-color-h);
+}
+.box .task-list .task .task-item {
+    overflow: hidden;
+    width: 75%;
+    height: 100%;
+    padding: 0 2%;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-size: 1rem;
+    text-align: left;
+}
+.box .done .task .task-item {
+    text-decoration-line: line-through;
+}
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: center;
+}
+#footer p {
+    display: inline-block;
+}
+#footer a span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    transition: opacity .3s;
+    opacity: 0.8;
+    filter: invert(100%);
+}
+#footer a span:hover {
+    opacity: 1.0;
+}
+#footer .github {
+    background-image: url(../img/github-logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#footer .tistory {
+    background-image: url(../img/tistory-logo.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@media (min-width: 486px) {
+    .box .sec-tit {
+        font-size: 20.8px;
+        font-size: 1.3rem;
+    }
+    .box button {
+        width: 15%;
+    }
+    .box .a-delete {
+        width: 30%;
+        height: 40px;
+        margin: 10px 35%;
+    }
+    .box .task-list .task {
+        height: 45px;
+        line-height: 45px;
+    }
+}
+
+@media (min-width: 768px) {
+    #header {
+        min-height: 100px;
+    }
+    #header .title {
+        font-size: 35.2px;
+        font-size: 2.2rem;
+    }
+    #header .clock {
+        font-size: 24px;
+        font-size: 1.5rem;
+    }
+    #box-container {
+        flex-flow: row wrap;
+        min-height: 85vh;
+        height: 85vh;
+    }
+    .box {
+        width: 45%;
+    }
+    .box .sec-tit {
+        margin: 40px 0;
+        height: 3.5%;
+        font-size: 24px;
+        font-size: 1.5rem;
+    }
+    .box .done-list {
+        height: 8%;
+    }
+    .box .enter-task {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 4.5%;
+    }
+    .box .inputTask {
+        height: 40px;
+        padding: 0 10px;
+        font-size: 16px;
+        font-size: 1rem;
+    }
+    .box button {
+        width: 20%;
+        height: 40px;
+    }
+    .box .a-delete {
+        width: 30%;
+        height: 40px;
+        margin: 20px 35%;
+    }
+    .box .task-list {
+        height: 70%;
+        max-height: 70%;
+    }
+    .box .task-list .task {
+        flex-shrink: 0;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 2px solid black;
+    }
+    .box .task-list .task .done-item, 
+    .box .task-list .task .del-item {
+        font-size: 28.8px;
+        font-size: 1.8rem;
+    }
+    .box .task-list .task .task-item {
+        font-size: 17.6px;
+        font-size: 1.1rem;
+    }
+    #footer {
+        height: 60px;
+        margin-top: 0;
+    }
+    #footer a span {
+        width: 40px;
+        height: 40px;
+        margin-left: 5px;
+        padding: 0px 10px 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #header {
+        position: relative;
+        justify-content: flex-end;
+        min-height: 120px;
+    }
+    #header .title {
+        font-size: 40px;
+        font-size: 2.5rem;
+    }
+    #header .clock {
+        position: absolute;
+        width: 30%;
+        font-size: 27.2px;
+        font-size: 1.7rem;
+        letter-spacing: -0.8px;
+        letter-spacing: -0.05rem;
+    }
+    #box-container {
+        min-height: 81vh;
+        height: 81vh;
+    }
+    .box button {
+        width: 15%;
+        font-size: 16px;
+        font-size: 1rem;
+    }
+    .box .task-list .task {
+        height: 60px;
+        line-height: 60px;
+    }
+    .box .task-list .task .done-item, 
+    .box .task-list .task .del-item {
+        font-size: 35.2px;
+        font-size: 2.2rem;
+    }
+    .box .task-list .task .task-item {
+        font-size: 19.2px;
+        font-size: 1.2rem;
+    }
+    #footer {
+        height: 70px;
+        margin-top: 0;
+    }
+    #footer a span {
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+        padding: 0px 20px 20px;
+    }
+}
